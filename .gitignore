@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.vercel/
+
+# 秘密情報（APIキーなど）はコミットしない
+.env
+.env*.local
+
+.DS_Store
+npm-debug.log*

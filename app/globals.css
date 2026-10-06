@@ -1,0 +1,187 @@
+/*
+ * サイト全体の見た目。
+ * 色を変えたいときは、まず下の「色の設定」を変えるのが簡単です。
+ */
+
+/* 色の設定 */
+:root {
+  --color-main: #1f5f8b;       /* メインの色（ボタン・ロゴ） */
+  --color-main-dark: #164766;  /* ボタンにマウスを乗せたときの色 */
+  --color-background: #f5f7f9; /* ページの背景 */
+  --color-card: #ffffff;       /* カードの背景 */
+  --color-text: #18232e;       /* 文字 */
+  --color-text-sub: #5a6775;   /* 補足の文字 */
+  --color-border: #d6dee6;     /* 線 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ヘッダー */
+.site-header {
+  background: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.site-header__logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-header__nav a {
+  text-decoration: none;
+}
+
+.site-header__nav a:hover {
+  color: var(--color-main);
+}
+
+/* トップの大きな見出し */
+.hero {
+  padding: 64px 0 48px;
+}
+
+.hero__title {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.hero__lead {
+  margin: 0 0 24px;
+  color: var(--color-text-sub);
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 6px;
+  background: var(--color-main);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button:hover {
+  background: var(--color-main-dark);
+}
+
+/* セクション */
+.section {
+  padding: 32px 0 64px;
+}
+
+.section__title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.section__lead {
+  margin: 0 0 24px;
+  color: var(--color-text-sub);
+}
+
+/* プランのカード */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.plan-card__visual {
+  display: flex;
+  align-items: flex-end;
+  height: 140px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4b7fa8, #1f5f8b);
+}
+
+/* 地域ごとのカードの色 */
+.plan-card__visual[data-area="関西"] { background: linear-gradient(135deg, #b5654a, #7d3b2a); }
+.plan-card__visual[data-area="沖縄"] { background: linear-gradient(135deg, #2aa5b3, #12707c); }
+.plan-card__visual[data-area="北海道"] { background: linear-gradient(135deg, #7c93b8, #44597e); }
+.plan-card__visual[data-area="関東"] { background: linear-gradient(135deg, #6f9a5b, #41683a); }
+.plan-card__visual[data-area="北陸"] { background: linear-gradient(135deg, #a48a3c, #6d5a1f); }
+.plan-card__visual[data-area="九州"] { background: linear-gradient(135deg, #3f8a6a, #1f5a43); }
+
+.plan-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+}
+
+.plan-card__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-sub);
+}
+
+.plan-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.plan-card__summary {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.plan-card__price {
+  margin: 4px 0 0;
+  font-weight: 700;
+  color: var(--color-main);
+}
+
+/* フッター */
+.site-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-sub);
+  font-size: 0.85rem;
+}
