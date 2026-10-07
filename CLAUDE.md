@@ -44,7 +44,10 @@
 | `docs/` | 演習の教材 |
 
 - 技術: Next.js（App Router）、TypeScript、素の CSS。公開は Vercel
-- サイトの起動: `npm run dev`（ポート 3000。Codespaces ではプレビューが自動で開く）
+- サイトの起動: `npm run dev`（ポート 3000）
+  - 起動したら、受講者が開ける URL を伝える。`localhost:3000` とは言わない（受講者のブラウザからは開けない）
+  - Codespaces では `echo "https://${CODESPACE_NAME}-3000.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"` で URL を作って表示し、「Ctrl を押しながらクリックすると開けます」と添える
+  - 開けないときは「画面下の『ポート』タブ → 3000 番の地球儀アイコン」を案内する
 - 本番と同じ形での確認: `npm run build`
 
 ## Supabase を使うとき（第5週から）
@@ -55,6 +58,11 @@
 - 問い合わせ（`inquiries`）は書き込みだけ許可している。保存するときに `.select()` を付けない（付けると権限エラーになる）
 - 表や RLS の定義は `supabase/` の SQL が正しい形。表の列名はそこに合わせる。表や権限を変えたいと言われたら、SQL を書いて、受講者に SQL Editor で実行してもらう
 - RLS をゆるめる変更（誰でも書き換えられるようにする など）は、理由とリスクを説明し、了承をもらってから行う
+
+## モデル
+
+- この演習では、最初は Haiku を使う（`.claude/settings.json` の `"model": "haiku"`）。この設定を変えない
+- 何度やり直しても受講者の意図どおりにならないときは、`/model sonnet` で Sonnet に切り替えられることを案内する
 
 ## 教材との関係
 
