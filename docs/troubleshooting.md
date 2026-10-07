@@ -22,7 +22,7 @@
 
 | 症状 | 対処 |
 | --- | --- |
-| `claude` と打っても動かない | ターミナルで `npm install -g @anthropic-ai/claude-code` を実行してから、もう一度 `claude` |
+| `claude` と打つと「command not found」と出る | ターミナルで `npm install -g @anthropic-ai/claude-code` を実行し、右上の「＋」で新しいターミナルを開いてから、もう一度 `claude` と入力します |
 | ログインできない | 招待メールのアカウントでログインしているか確認します。だめなら講師へ |
 | 返事がおかしい・同じことを繰り返す | `/clear` と入力して会話をリセットし、やりたいことを最初から伝え直します |
 | 終わり方が分からない | `/exit` と入力するか、Ctrl + C を2回押します |
