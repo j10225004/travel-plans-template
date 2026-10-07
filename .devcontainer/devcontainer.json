@@ -15,7 +15,7 @@
   "portsAttributes": {
     "3000": {
       "label": "サイトのプレビュー",
-      "onAutoForward": "openPreview"
+      "onAutoForward": "openBrowser"
     }
   },
   "customizations": {
