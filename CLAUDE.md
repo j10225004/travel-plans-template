@@ -44,7 +44,10 @@
 | `docs/` | 演習の教材 |
 
 - 技術: Next.js（App Router）、TypeScript、素の CSS。公開は Vercel
-- サイトの起動: `npm run dev`（ポート 3000。Codespaces ではプレビューが自動で開く）
+- サイトの起動: `npm run dev`（ポート 3000）
+  - 起動したら、受講者が開ける URL を伝える。`localhost:3000` とは言わない（受講者のブラウザからは開けない）
+  - Codespaces では `echo "https://${CODESPACE_NAME}-3000.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"` で URL を作って表示し、「Ctrl を押しながらクリックすると開けます」と添える
+  - 開けないときは「画面下の『ポート』タブ → 3000 番の地球儀アイコン」を案内する
 - 本番と同じ形での確認: `npm run build`
 
 ## Supabase を使うとき（第5週から）
