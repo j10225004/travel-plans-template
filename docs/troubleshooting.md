@@ -22,7 +22,9 @@
 
 | 症状 | 対処 |
 | --- | --- |
-| `claude` と打つと「command not found」と出る | ターミナルで `npm install -g @anthropic-ai/claude-code` を実行し、右上の「＋」で新しいターミナルを開いてから、もう一度 `claude` と入力します |
+| `claude` と打つと「command not found」と出る | [week01.md の「3. Claude Code が入っているか確かめる」](week01.md#3-claude-code-が入っているか確かめる2分)の手順で入れます。公式の入れ方 `curl -fsSL https://claude.ai/install.sh \| bash` を実行し、新しいターミナルを開いてから `claude --version` で確かめます |
+| 入れたのに、まだ「command not found」と出る | `echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc` を実行し、新しいターミナルを開きます。それでもだめなら `npm install -g @anthropic-ai/claude-code`（もう一つの公式の入れ方）を試します |
+| 起動時に「自動更新できない」というお知らせが出る | 使うのに問題はありません。最新にしたいときは `claude update` と入力します |
 | ログインできない | 招待メールのアカウントでログインしているか確認します。だめなら講師へ |
 | 返事がおかしい・同じことを繰り返す | `/clear` と入力して会話をリセットし、やりたいことを最初から伝え直します |
 | 終わり方が分からない | `/exit` と入力するか、Ctrl + C を2回押します |
