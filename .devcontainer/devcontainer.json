@@ -1,13 +1,14 @@
 {
   "name": "たびプラン（Claude Code 演習）",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
-  "features": {
-    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
-  },
   "hostRequirements": {
     "cpus": 2
   },
-  "postCreateCommand": "npm ci",
+  "postCreateCommand": {
+    "dependencies": "npm ci",
+    "claude-code": "curl -fsSL https://claude.ai/install.sh | bash"
+  },
+  "waitFor": "postCreateCommand",
   "forwardPorts": [
     3000
   ],
