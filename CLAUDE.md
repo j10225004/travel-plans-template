@@ -40,11 +40,21 @@
 | `app/globals.css` | 見た目（色は先頭の「色の設定」にまとめてある） |
 | `lib/plans.ts` | プランのデータを取り出す処理（第5週で Supabase に差し替える） |
 | `data/plans.json` | プランのダミーデータ |
+| `supabase/` | データベースの表と権限を作る SQL（受講者が Supabase の SQL Editor に貼り付けて使う） |
 | `docs/` | 演習の教材 |
 
 - 技術: Next.js（App Router）、TypeScript、素の CSS。公開は Vercel
 - サイトの起動: `npm run dev`（ポート 3000。Codespaces ではプレビューが自動で開く）
 - 本番と同じ形での確認: `npm run build`
+
+## Supabase を使うとき（第5週から）
+
+- 接続情報は環境変数 `NEXT_PUBLIC_SUPABASE_URL` と `NEXT_PUBLIC_SUPABASE_ANON_KEY` から読む。値は受講者が `.env.local` に入れてある（中身は読まない）
+- 接続には `@supabase/supabase-js` を使う。ログイン状態をサーバー側で扱う仕組み（`@supabase/ssr` など）は使わず、シンプルに保つ。データの守りは RLS が担う
+- Supabase から読むページには `export const dynamic = "force-dynamic";` を付け、毎回最新のデータを表示する（付けないと、管理画面で追加したプランが本番に出ない）
+- 問い合わせ（`inquiries`）は書き込みだけ許可している。保存するときに `.select()` を付けない（付けると権限エラーになる）
+- 表や RLS の定義は `supabase/` の SQL が正しい形。表の列名はそこに合わせる。表や権限を変えたいと言われたら、SQL を書いて、受講者に SQL Editor で実行してもらう
+- RLS をゆるめる変更（誰でも書き換えられるようにする など）は、理由とリスクを説明し、了承をもらってから行う
 
 ## 教材との関係
 
