@@ -119,6 +119,8 @@ Vercel は「サイトをインターネットに公開してくれるサービ�
 | Codespaces | ブラウザの中の作業部屋。ここで Claude に頼む |
 | Vercel | リポジトリの中身を、インターネットに公開してくれるサービス |
 
+3つのサービスの関係は、[しくみの図解（how-it-works.md）](how-it-works.md) に図でまとめています。
+
 ## つまずいたら
 
 - Codespaces が開かない、Claude にログインできない → [troubleshooting.md](troubleshooting.md)
